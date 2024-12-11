@@ -18,8 +18,6 @@ dependencies {
     implementation(libs.gson)
     // Required due to smali, or build fails. Can be removed once smali is bumped.
     implementation(libs.guava)
-    // Android API stubs defined here.
-    compileOnly(project(":patches:stub"))
 }
 
 kotlin {
