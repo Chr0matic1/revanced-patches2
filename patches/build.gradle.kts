@@ -11,3 +11,19 @@ patches {
         license = "GNU General Public License v3.0"
     }
 }
+
+
+dependencies {
+    // Used by JsonGenerator.
+    implementation(libs.gson)
+    // Required due to smali, or build fails. Can be removed once smali is bumped.
+    implementation(libs.guava)
+    // Android API stubs defined here.
+    compileOnly(project(":patches:stub"))
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs = listOf("-Xcontext-receivers")
+    }
+}
